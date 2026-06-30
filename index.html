@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blindspot Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div>
+        <h1>Blindspot Tracker</h1>
+        <p>Track your encoding friction, surface hidden blind spots, and train with five focused modes.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel" id="setup-panel">
+        <h2>Fixed System</h2>
+        <p>Your number-to-consonant system is locked in. Use the controls below to tune the drills.</p>
+        <div class="rules-grid" id="rules-grid"></div>
+        <div class="rule-row">
+          <label for="master-length">Master sequence length</label>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <input id="master-length" type="number" min="2" max="8" value="4" />
+            <button id="apply-master-length">Apply</button>
+          </div>
+        </div>
+        <div class="setup-actions">
+          <button id="reset-rules">Reset Analytics</button>
+          <small id="setup-status"></small>
+        </div>
+      </section>
+
+      <section class="panel" id="dashboard-panel">
+        <h2>Training Hub</h2>
+        <div class="tiles">
+          <button class="tile" data-mode="1">
+            <strong>Mode 1</strong>
+            <span>Reflexes</span>
+            <p>Rapid number or letter recall, including random direction drills.</p>
+          </button>
+          <button class="tile" data-mode="flash">
+            <strong>Mode 2</strong>
+            <span>Flash Drill</span>
+            <p>Flash digits, letters, or both with a metronome and optional voice prompt.</p>
+          </button>
+          <button class="tile" data-mode="2">
+            <strong>Mode 3</strong>
+            <span>Synthesis</span>
+            <p>Chunked sequence synthesis right after reflex drills.</p>
+          </button>
+          <button class="tile" data-mode="3">
+            <strong>Mode 4</strong>
+            <span>Boggle Sprint</span>
+            <p>Find words in a 4x4 grid using adjacent-letter paths.</p>
+          </button>
+          <button class="tile" data-mode="4">
+            <strong>Mode 5</strong>
+            <span>Word Generator</span>
+            <p>Generate words from consonant targets in order.</p>
+          </button>
+          <button class="tile" data-mode="5">
+            <strong>Mode 6</strong>
+            <span>Visualization Forge</span>
+            <p>Slow-paced encoding checklist.</p>
+          </button>
+        </div>
+        <div class="exercise hidden" id="exercise-card">
+          <div class="exercise-header">
+            <h3 id="exercise-title"></h3>
+            <button id="exit-exercise">Exit</button>
+          </div>
+          <div class="exercise-body" id="exercise-body"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="analytics-panel">
+        <h2>Weakness Analysis</h2>
+        <p>Click on a weakness to train it intensively.</p>
+        <div class="weaknesses-grid" id="weaknesses-grid"></div>
+      </section>
+    </main>
+  </div>
+  <a href="https://forms.gle/Z13PxYdRExS736jm8" target="_blank" class="feedback-button" title="Send feedback">
+    💡
+  </a>
+  <script src="script.js"></script>
+</body>
+</html>
